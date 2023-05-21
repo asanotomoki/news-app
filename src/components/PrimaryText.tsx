@@ -5,8 +5,5 @@ type Props = {
 }
 
 export const PrimaryText: React.FC<Props> = ({ children }) => {
-  if (!children) {
-    return <></>
-  }
-  return <p>{children}</p>
+  return <p>{          children}</p>
 }
