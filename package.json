@@ -14,6 +14,7 @@
     "format": "run-s format:prettier format:eslint",
     "format:eslint": "yarn lint:eslint --fix",
     "format:prettier": "yarn lint:prettier --write",
+    "typecheck": "tsc  --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
