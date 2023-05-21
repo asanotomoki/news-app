@@ -1,5 +1,6 @@
-import { PrimaryText } from "@/components/PrimaryText";
-import Link from "next/link";
+import Link from 'next/link'
+
+import { PrimaryText } from '@/components/PrimaryText'
 
 export default function Home() {
   return (
