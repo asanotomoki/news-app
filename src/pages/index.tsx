@@ -1,9 +1,10 @@
 import Link from 'next/link'
 
 import { NewsCard } from '@/components/newsCard'
+import { getTopNewsList } from '@/lib/api/getNewsList'
+import type { News } from '@/types/News'
 
-export default function Home(props: any) {
-  console.log(props.topArticles[0].url)
+export default function Home(props: { topArticles: News[] }) {
   const newsArray = props.topArticles
   return (
     <main
@@ -11,16 +12,15 @@ export default function Home(props: any) {
     >
       <section>
         <ul className="flex flex-col gap-6">
-          {newsArray.map((news: any, index: number) => {
+          {newsArray.map((news, index) => {
             return (
               <li key={`news-${index}`}>
-                <Link href={news.url}>
-                  <NewsCard
-                    title={news.title}
-                    date={news.publishedAt}
-                    image={news.urlToImage}
-                  />
-                </Link>
+                <NewsCard
+                  title={news.title}
+                  date={news.publishedAt}
+                  image={news.urlToImage}
+                  url={news.url}
+                />
               </li>
             )
           })}
@@ -31,19 +31,12 @@ export default function Home(props: any) {
 }
 
 export const getStaticProps = async () => {
-  // NewsAPIのトップ記事の情報を取得
-  const pageSize = 10 // 取得したい記事の数
-  const requestUrl = `https://newsapi.org/v2/top-headlines?country=jp&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
-
-  console.log(requestUrl)
-  const topRes = await fetch(requestUrl)
-  const topJson = await topRes.json()
-  console.log(topJson)
-  const topArticles = topJson?.articles
+  const topRes = await getTopNewsList()
+  const topArticles = topRes.articles
   return {
     props: {
       topArticles,
     },
-    revalidate: 60 * 10,
+    revalidate: 60 * 60,
   }
 }
