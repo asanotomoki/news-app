@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 
 import { render, screen } from '@testing-library/react'
 
-import { PrimaryText } from '../../components/PrimaryText'
+import { PrimaryText } from '../../../components/PrimaryText'
 
 describe('Primary Text', () => {
   test('output msg', () => {

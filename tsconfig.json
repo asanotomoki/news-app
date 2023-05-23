@@ -18,6 +18,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.config.ts",
+    "src/lib/test/components.test/PrimaryText.test.js",
+    "src/lib/test/components.test/PrimaryText.test.js"
+  ],
   "exclude": ["node_modules"]
 }
