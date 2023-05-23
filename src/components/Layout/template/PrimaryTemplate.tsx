@@ -7,7 +7,7 @@ export const PrimaryTemplate = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="bg-">
         <div>PrimaryTemplate</div>
       </main>
       <Footer />

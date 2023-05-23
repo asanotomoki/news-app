@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       onClick={onClick}
-      className={`bg-${colorClass} p-2 px-4 rounded-xl hover:opacity-80 transition-opacity text-${textColor} font-bold`}
+      className={`bg-${colorClass} p-2 px-8 rounded-full hover:opacity-75 transition-opacity text-${textColor} font-bold`}
     >
       {children}
     </button>
