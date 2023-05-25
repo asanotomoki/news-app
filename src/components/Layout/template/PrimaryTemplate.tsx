@@ -1,16 +1,19 @@
 import React from 'react'
 
-import { Footer } from '../Footer'
-import { Header } from '../Header'
+import { SideBar } from '../sidebar/sideBar'
 
-export const PrimaryTemplate = () => {
+type Props = {
+  children: React.ReactNode
+}
+export const PrimaryTemplate = ({ children }: Props) => {
   return (
     <>
-      <Header />
-      <main className="bg-">
-        <div>PrimaryTemplate</div>
+      <main className={`flex justify-between w-full gap-4`}>
+        <SideBar />
+        <div className="flex min-h-screen flex-col items-center justify-between p-24">
+          {children}
+        </div>
       </main>
-      <Footer />
     </>
   )
 }

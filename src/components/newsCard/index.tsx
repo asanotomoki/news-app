@@ -28,7 +28,8 @@ export const NewsCard: React.FC<Props> = (props) => {
           <PrimaryButton onClick={onClick}>保存</PrimaryButton>
         </div>
       </div>
-      <div className="w-1/3 ml-8 max-h-48 overflow-hidden flex items-center justify-center">
+      <div className="w-1/3 ml-8 max-h-48 overflow-hidden flex items-center justify-center max-w-sm">
+        {/*eslint-disable-next-line @next/next/no-img-element*/}
         <img src={image} alt={title} />
       </div>
     </article>

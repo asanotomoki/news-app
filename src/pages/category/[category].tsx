@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import { PrimaryTemplate } from '@/components/Layout/template/PrimaryTemplate'
 import { NewsCard } from '@/components/newsCard'
 import { getCategoryNewsList } from '@/lib/api/getNewsList'
 import type { News } from '@/types/News'
@@ -8,9 +9,7 @@ import type { News } from '@/types/News'
 export default function Home(props: { topArticles: News[]; category: string }) {
   const newsArray = props.topArticles
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24`}
-    >
+    <PrimaryTemplate>
       <h1 className="text-4xl font-bold mb-16">{props.category}</h1>
       <section>
         <ul className="flex flex-col gap-6">
@@ -35,7 +34,7 @@ export default function Home(props: { topArticles: News[]; category: string }) {
           )}
         </ul>
       </section>
-    </main>
+    </PrimaryTemplate>
   )
 }
 

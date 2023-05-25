@@ -25,12 +25,6 @@ module.exports = {
           DEFAULT: '#84cc16',
           dark: '#4d7c0f',
         },
-        text: {
-          primary: '#333333',
-          secondary: '#4b5563',
-          disabled: '#6b7280',
-          hint: '#9ca3af',
-        },
       },
     },
   },
