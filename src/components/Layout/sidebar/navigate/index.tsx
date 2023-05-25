@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { AiOutlineHome } from 'react-icons/ai'
 
-import { categories } from './category'
+import { categories } from '@/data/category'
+
 import { LinkToIcon } from './LinkToIcon'
 
 export const Navigate = () => {

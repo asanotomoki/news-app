@@ -3,14 +3,19 @@ import { useRouter } from 'next/router'
 
 import { PrimaryTemplate } from '@/components/Layout/template/PrimaryTemplate'
 import { NewsCard } from '@/components/newsCard'
+import { categories } from '@/data/category'
 import { getCategoryNewsList } from '@/lib/api/getNewsList'
 import type { News } from '@/types/News'
 
-export default function Home(props: { topArticles: News[]; category: string }) {
+export default function Home(props: {
+  topArticles: News[]
+  category: string
+  title: string
+}) {
   const newsArray = props.topArticles
   return (
     <PrimaryTemplate>
-      <h1 className="text-4xl font-bold mb-16">{props.category}</h1>
+      <h1 className="text-4xl font-bold mb-16">{props.title}</h1>
       <section>
         <ul className="flex flex-col gap-6">
           {newsArray.length !== 0 ? (
@@ -45,20 +50,20 @@ export const getStaticProps = async (paths: {
   const topRes = await getCategoryNewsList(path)
   const topArticles = topRes.articles
   const category = path.toUpperCase()
+  const title = categories.find((category) => category.slug === path)?.label
   return {
     props: {
       topArticles,
       category,
+      title,
     },
     revalidate: 60 * 60,
   }
 }
 
 export const getStaticPaths = async () => {
-  const paths = [
-    { params: { category: 'technology' } },
-    { params: { category: 'science' } },
-    { params: { category: 'health' } },
-  ]
+  const paths = categories.map((category) => {
+    return { params: { category: category.slug } }
+  })
   return { paths, fallback: 'blocking' }
 }

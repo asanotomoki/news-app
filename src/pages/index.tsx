@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import { PrimaryTemplate } from '@/components/Layout/template/PrimaryTemplate'
 import { NewsCard } from '@/components/newsCard'
 import { getTopNewsList } from '@/lib/api/getNewsList'
@@ -7,6 +5,7 @@ import type { News } from '@/types/News'
 
 export default function Home(props: { topArticles: News[] }) {
   const newsArray = props.topArticles
+
   return (
     <PrimaryTemplate>
       <section>
