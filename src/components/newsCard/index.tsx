@@ -1,7 +1,8 @@
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import React from 'react'
 
-import { PrimaryButton } from '../share/atom/Button'
+import { SaveButton } from './Button/SaveButton'
 
 type Props = {
   title: string
@@ -12,9 +13,7 @@ type Props = {
 
 export const NewsCard: React.FC<Props> = (props) => {
   const { title, date, image, url } = props
-  const onClick = () => {
-    console.log('click')
-  }
+  const { data: session } = useSession()
   return (
     <article className="flex justify-between items-center w-full  bg-white p-6 min-h-max shadow-lg">
       <div className="flex flex-col justify-between gap-3 w-2/3">
@@ -24,9 +23,7 @@ export const NewsCard: React.FC<Props> = (props) => {
           </h3>
         </Link>
         <p className=" text-gray-500">{date}</p>
-        <div>
-          <PrimaryButton onClick={onClick}>保存</PrimaryButton>
-        </div>
+        <div>{session && <SaveButton />}</div>
       </div>
       <div className="w-1/3 ml-8 max-h-48 overflow-hidden flex items-center justify-center max-w-sm">
         {/*eslint-disable-next-line @next/next/no-img-element*/}

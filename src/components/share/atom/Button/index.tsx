@@ -8,7 +8,7 @@ type Props = {
 type ButtonProps = {
   children: React.ReactNode
   onClick?: () => void
-  colorClass?: string
+  bg?: string
   textColor?: string
 }
 
@@ -16,13 +16,13 @@ const Button: React.FC<ButtonProps> = (props) => {
   const {
     children,
     onClick,
-    colorClass = 'primary',
+    bg = 'primary',
     textColor = 'text-primary',
   } = props
   return (
     <button
       onClick={onClick}
-      className={`bg-${colorClass} p-2 px-8 rounded-full hover:opacity-75 transition-opacity text-${textColor} font-bold`}
+      className={`${bg} p-2 px-8 rounded-full hover:opacity-75 transition-opacity text-${textColor} font-bold`}
     >
       {children}
     </button>
@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 export const PrimaryButton: React.FC<Props> = ({ children, onClick }) => {
   return (
-    <Button colorClass="primary" onClick={onClick}>
+    <Button bg="bg-primary" onClick={onClick}>
       {children}
     </Button>
   )
@@ -39,11 +39,7 @@ export const PrimaryButton: React.FC<Props> = ({ children, onClick }) => {
 
 export const PrimaryLightButton: React.FC<Props> = ({ children, onClick }) => {
   return (
-    <Button
-      colorClass="primary-light"
-      onClick={onClick}
-      textColor="neutral-900"
-    >
+    <Button bg="bg-primary-light" onClick={onClick} textColor="neutral-900">
       {children}
     </Button>
   )
@@ -51,14 +47,14 @@ export const PrimaryLightButton: React.FC<Props> = ({ children, onClick }) => {
 
 export const PrimaryDarkButton: React.FC<Props> = ({ children, onClick }) => {
   return (
-    <Button colorClass="primary-dark" onClick={onClick} textColor="neutral-50">
+    <Button bg="bg-primary-dark" onClick={onClick} textColor="neutral-50">
       {children}
     </Button>
   )
 }
 export const SecondaryButton: React.FC<Props> = ({ children, onClick }) => {
   return (
-    <Button colorClass="secondary" onClick={onClick}>
+    <Button bg="bg-secondary" onClick={onClick}>
       {children}
     </Button>
   )
@@ -69,11 +65,7 @@ export const SecondaryLightButton: React.FC<Props> = ({
   onClick,
 }) => {
   return (
-    <Button
-      colorClass="secondary-light"
-      onClick={onClick}
-      textColor="neutral-900"
-    >
+    <Button bg="bg-secondary-light" onClick={onClick} textColor="neutral-900">
       {children}
     </Button>
   )
@@ -81,11 +73,7 @@ export const SecondaryLightButton: React.FC<Props> = ({
 
 export const SecondaryDarkButton: React.FC<Props> = ({ children, onClick }) => {
   return (
-    <Button
-      colorClass="secondary-dark"
-      onClick={onClick}
-      textColor="neutral-50"
-    >
+    <Button bg="bg-secondary-dark" onClick={onClick} textColor="neutral-50">
       {children}
     </Button>
   )

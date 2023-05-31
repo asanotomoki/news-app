@@ -11,7 +11,7 @@ type ClientType = {
 
 const prisma = new PrismaClient()
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({

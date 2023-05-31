@@ -1,6 +1,10 @@
 import { FaChartBar } from 'react-icons/fa'
 import { IoBusinessSharp } from 'react-icons/io5'
-import { MdOutlineScience, MdSportsBaseball } from 'react-icons/md'
+import {
+  MdFavoriteBorder,
+  MdOutlineScience,
+  MdSportsBaseball,
+} from 'react-icons/md'
 import { RiHealthBookLine } from 'react-icons/ri'
 import { SiDcentertainment, SiGeneralelectric } from 'react-icons/si'
 

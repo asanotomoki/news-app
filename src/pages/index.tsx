@@ -8,6 +8,7 @@ export default function Home(props: { topArticles: News[] }) {
 
   return (
     <PrimaryTemplate>
+      <h1 className="text-4xl font-bold mb-16">Home</h1>
       <section>
         <ul className="flex flex-col gap-6">
           {newsArray.map((news, index) => {
