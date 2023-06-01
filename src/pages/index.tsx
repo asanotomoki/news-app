@@ -11,18 +11,24 @@ export default function Home(props: { topArticles: News[] }) {
       <h1 className="text-4xl font-bold mb-16">Home</h1>
       <section>
         <ul className="flex flex-col gap-6">
-          {newsArray.map((news, index) => {
-            return (
-              <li key={`news-${index}`}>
-                <NewsCard
-                  title={news.title}
-                  date={news.publishedAt}
-                  image={news.urlToImage}
-                  url={news.url}
-                />
-              </li>
-            )
-          })}
+          {newsArray ? (
+            newsArray.map((news, index) => {
+              return (
+                <li key={`news-${index}`}>
+                  <NewsCard
+                    title={news.title}
+                    date={news.publishedAt}
+                    image={news.urlToImage}
+                    url={news.url}
+                  />
+                </li>
+              )
+            })
+          ) : (
+            <>
+              <h2>記事を取得できませんでした</h2>
+            </>
+          )}
         </ul>
       </section>
     </PrimaryTemplate>
@@ -31,11 +37,19 @@ export default function Home(props: { topArticles: News[] }) {
 
 export const getStaticProps = async () => {
   const topRes = await getTopNewsList()
-  const topArticles = topRes.articles
-  return {
-    props: {
-      topArticles,
-    },
-    revalidate: 60 * 60,
+  const topArticles = topRes?.articles
+  if (topArticles) {
+    return {
+      props: {
+        topArticles,
+      },
+      revalidate: 60 * 60,
+    }
+  } else {
+    return {
+      props: {
+        topArticles: null,
+      },
+    }
   }
 }

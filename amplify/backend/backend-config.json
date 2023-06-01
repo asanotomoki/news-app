@@ -1,1 +1,27 @@
-{}
+{
+  "auth": {
+    "newsapp": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaTypes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": []
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "interactions": {
+    "lex7fa70283": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lex"
+    }
+  }
+}

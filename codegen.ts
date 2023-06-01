@@ -5,9 +5,12 @@ const config: CodegenConfig = {
   schema: 'http://localhost:4000',
   documents: 'src/**/*.tsx',
   generates: {
-    'src/gql/': {
+    'src/graphql': {
       preset: 'client',
       plugins: [],
+    },
+    './graphql.schema.json': {
+      plugins: ['introspection'],
     },
   },
 }

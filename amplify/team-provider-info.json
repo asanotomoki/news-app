@@ -11,5 +11,23 @@
       "StackId": "arn:aws:cloudformation:us-east-1:067735848196:stack/amplify-amplify368e4c6fe7344-staging-175218/8fe5d8e0-f992-11ed-b00b-12537795dff7",
       "AmplifyAppId": "dgoz36pce7t8t"
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-newsapp-dev-184801-authRole",
+      "UnauthRoleArn": "arn:aws:iam::067735848196:role/amplify-newsapp-dev-184801-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::067735848196:role/amplify-newsapp-dev-184801-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-newsapp-dev-184801-deployment",
+      "UnauthRoleName": "amplify-newsapp-dev-184801-unauthRole",
+      "StackName": "amplify-newsapp-dev-184801",
+      "StackId": "arn:aws:cloudformation:us-east-1:067735848196:stack/amplify-newsapp-dev-184801/3d9573f0-ff98-11ed-960a-0eea86a96083",
+      "AmplifyAppId": "dgoz36pce7t8t"
+    },
+    "categories": {
+      "auth": {
+        "newsapp": {}
+      }
+    }
   }
 }

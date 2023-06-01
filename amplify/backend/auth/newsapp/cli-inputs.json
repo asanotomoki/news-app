@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "newsapp_identitypool_017768ad",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "newsapp",
+    "sharedId": "017768ad",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}
