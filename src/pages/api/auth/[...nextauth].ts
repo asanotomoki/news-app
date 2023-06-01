@@ -1,5 +1,5 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client'
+//import { PrismaAdapter } from '@next-auth/prisma-adapter'
+//import { PrismaClient } from '@prisma/client'
 import type { NextAuthOptions } from 'next-auth'
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
@@ -9,9 +9,9 @@ type ClientType = {
   clientSecret: string
 }
 console.log(`NextAuth ${process.env.NEXTAUTH_URL}`)
-const prisma = new PrismaClient()
+//const prisma = new PrismaClient()
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  //adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       site: process.env.NEXTAUTH_URL,
