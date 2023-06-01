@@ -38,7 +38,6 @@ export default function Home(props: { topArticles: News[] }) {
 export const getStaticProps = async () => {
   const topRes = await getTopNewsList()
   const topArticles = topRes?.articles
-  console.log(process.env.NEXTAUTH_URL)
   if (topArticles) {
     return {
       props: {
