@@ -26,5 +26,5 @@
     "src/lib/test/components.test/PrimaryText.test.js",
     "src/lib/test/components.test/PrimaryText.test.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next", "out", "src/generated"]
 }
