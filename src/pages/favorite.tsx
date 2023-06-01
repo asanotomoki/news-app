@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   } else {
     const topRes = await getTopNewsList()
-    const topArticles = topRes.articles
+    const topArticles = topRes?.articles
     return {
       props: {
         title: 'Favorite',
